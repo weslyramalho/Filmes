@@ -23,12 +23,15 @@ public class FilmesServices {
 		boolean diretor = filmesList.stream().allMatch(f -> f.getDiretor().equals(filmes));
 		boolean ano = filmesList.stream().allMatch(f -> f.getAno().equals(filmes));
 		
+		
 		if(id && nome && diretor && ano == false) {
+		
 			filmesList.add(filmes);
+			}
 		}
 	
 		
-	}
+	
 
 
 }

@@ -1,5 +1,6 @@
 package com.filmes.filmes.entities;
 
+import java.util.Comparator;
 import java.util.Date;
 
 public class Filmes {
@@ -51,6 +52,8 @@ public class Filmes {
 		this.ano = ano;
 		this.nota = nota;
 	}
+	
+	
 	
 	
 
