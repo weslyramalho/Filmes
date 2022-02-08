@@ -1,14 +1,13 @@
 package com.filmes.filmes.entities;
 
-import java.util.Comparator;
-import java.util.Date;
+
 
 public class Filmes {
 	
 	private Integer id;
 	private String nome;
 	private String diretor;
-	private Date ano;
+	private Integer ano;
 	private Integer nota;
 	
 	public Integer getId() {
@@ -29,10 +28,10 @@ public class Filmes {
 	public void setDiretor(String diretor) {
 		this.diretor = diretor;
 	}
-	public Date getAno() {
+	public Integer getAno() {
 		return ano;
 	}
-	public void setAno(Date ano) {
+	public void setAno(Integer ano) {
 		this.ano = ano;
 	}
 	public Integer getNota() {
@@ -45,7 +44,7 @@ public class Filmes {
 		
 	}
 	
-	public Filmes(Integer id, String nome, String diretor, Date ano, Integer nota) {
+	public Filmes(Integer id, String nome, String diretor, Integer ano, Integer nota) {
 		this.id = id;
 		this.nome = nome;
 		this.diretor = diretor;
