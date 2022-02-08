@@ -39,7 +39,15 @@ public class FilmesRepository {
 				.filter(f -> f.getDiretor().equalsIgnoreCase(diretor))
 				.collect(Collectors.toList());
 	}
-	
+	 public List<Filmes> findAll(){
+		 return filmesList;
+	 }
+	 
+	 public Filmes buscaPorId(Integer id) {
+		 return filmesList.stream().filter(f-> f.getId().equals(id))
+				 .findFirst()
+				 .orElse(null);
+	 }
 	
 
 }
