@@ -45,7 +45,9 @@ public class FilmesServices {
 	public void remove(Integer id) {
 		filmesRepository.remove(id);
 	}
-	public void update(Filmes filmes);
+	public void update(Filmes filmes) {
+		filmesRepository.update(filmes);
+	}
 
 		
 	
