@@ -1,6 +1,6 @@
 package com.filmes.filmes.services;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import com.filmes.filmes.entities.Filmes;
 import com.filmes.filmes.repositories.FilmesRepository;
 
 @Service
-public class FilmesServices {
+public class FilmesServices implements IFilmesServices {
 
 	@Autowired
 	private FilmesRepository filmesRepository;
