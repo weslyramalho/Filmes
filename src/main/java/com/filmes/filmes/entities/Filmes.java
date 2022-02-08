@@ -7,7 +7,7 @@ public class Filmes {
 	private Integer id;
 	private String nome;
 	private String diretor;
-	private Integer ano;
+	private Long ano;
 	private Integer nota;
 	
 	public Integer getId() {
@@ -28,10 +28,10 @@ public class Filmes {
 	public void setDiretor(String diretor) {
 		this.diretor = diretor;
 	}
-	public Integer getAno() {
+	public Long getAno() {
 		return ano;
 	}
-	public void setAno(Integer ano) {
+	public void setAno(Long ano) {
 		this.ano = ano;
 	}
 	public Integer getNota() {
@@ -44,7 +44,7 @@ public class Filmes {
 		
 	}
 	
-	public Filmes(Integer id, String nome, String diretor, Integer ano, Integer nota) {
+	public Filmes(Integer id, String nome, String diretor, Long ano, Integer nota) {
 		this.id = id;
 		this.nome = nome;
 		this.diretor = diretor;

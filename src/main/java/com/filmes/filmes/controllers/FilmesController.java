@@ -62,7 +62,7 @@ public class FilmesController {
 	    }
 	  
 	  @DeleteMapping
-	  public ResponseEntity<Object> delete(Integer id) {
+	  public ResponseEntity<Integer> delete(Integer id) {
 		  filmesServices.remove(id);
 	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
