@@ -3,32 +3,27 @@ package com.filmes.filmes.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.filmes.filmes.entities.Filmes;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.filmes.filmes.entities.Filmes;
+import com.filmes.filmes.repositories.FilmesRepository;
+
+@Service
 public class FilmesServices {
 
-	private List<Filmes> filmesList;
+	@Autowired
+	private FilmesRepository filmesRepository;
 	
-	public FilmesServices() {
-		this.filmesList = new ArrayList<>();
-	}
-	
-	public List<Filmes> Filmes(String nome){
-		return filmesList;
-	}
-	
-	public void addNovoFilme(Filmes filmes) {
-		boolean id = filmesList.stream().allMatch(f -> f.getId().equals(filmes));
-		boolean nome = filmesList.stream().allMatch(f -> f.getNome().equals(filmes));
-		boolean diretor = filmesList.stream().allMatch(f -> f.getDiretor().equals(filmes));
-		boolean ano = filmesList.stream().allMatch(f -> f.getAno().equals(filmes));
-		
-		
-		if(id && nome && diretor && ano == false) {
-		
-			filmesList.add(filmes);
-			}
+	public List<Filmes> findAll(String filmes, String diretor){
+		if(filmes != null) {
+			return filmesRepository.buscarFilmesPorNome(filmes);
+		}else if(diretor != null) {
+			return filmesRepository.buscarFilmesPorDiretor(diretor);
 		}
+		return filmesRepository.findAll();
+	}
+	
 	
 		
 	
