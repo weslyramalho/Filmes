@@ -24,7 +24,14 @@ public class FilmesServices {
 		return filmesRepository.findAll();
 	}
 	
+	public Filmes buscaPorId(Integer id) {
+		return filmesRepository.buscaPorId(id);
+	}
 	
+	public Filmes cadastrarFilme(Filmes filmes);
+	public void remove(Integer id);
+	public void update(Filmes filmes);
+
 		
 	
 
