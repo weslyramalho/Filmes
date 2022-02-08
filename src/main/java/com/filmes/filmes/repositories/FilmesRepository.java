@@ -48,6 +48,24 @@ public class FilmesRepository {
 				 .findFirst()
 				 .orElse(null);
 	 }
+	 
+	 public void update(Filmes filmes) {
+		 filmesList.stream()
+		 			.filter(f -> f.getId().equals(filmes.getId()))
+		 			.forEach(f -> f.setNome(filmes.getNome()));
+		 
+		 filmesList.stream()
+			.filter(f -> f.getId().equals(filmes.getId()))
+			.forEach(f -> f.setDiretor(filmes.getDiretor()));
+		 
+		 filmesList.stream()
+			.filter(f -> f.getId().equals(filmes.getId()))
+			.forEach(f -> f.setAno(filmes.getAno()));
+		 
+		 filmesList.stream()
+			.filter(f -> f.getId().equals(filmes.getId()))
+			.forEach(f -> f.setNota(filmes.getNota()));
+	 }
 	
 
 }
