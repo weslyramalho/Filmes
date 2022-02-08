@@ -42,7 +42,9 @@ public class FilmesServices {
 		filmesRepository.cadastrarFilme(filmes);
 		return filmes;
 	}
-	public void remove(Integer id);
+	public void remove(Integer id) {
+		filmesRepository.remove(id);
+	}
 	public void update(Filmes filmes);
 
 		
