@@ -27,11 +27,16 @@ public class FilmesController {
 	@Autowired
 	FilmesServices filmesServices;
 	
+	@GetMapping
+	public List<Filmes> findAll(@RequestParam(required = false)String filmes, String diretor){
+		return filmesServices.findAll(filmes, diretor);
+	}
+
 	@Autowired
 	FilmesRepository filmesRepository;
 	
 	@PostMapping
-	public ResponseEntity<Integer> post(@RequestBody final Filmes filmes){
+	public ResponseEntity<Object> post(@RequestBody final Filmes filmes){
 		if(filmesRepository.findAll().stream().anyMatch(f -> f.getNome().equalsIgnoreCase(filmes.getNome())) &&
 				filmesRepository.findAll().stream().anyMatch(f -> f.getDiretor().equalsIgnoreCase(filmes.getDiretor()))){
 					throw new ResponseStatusException(HttpStatus.CONFLICT, "Ops. Este filme já esta cadastrado!");
@@ -41,12 +46,7 @@ public class FilmesController {
 
 	}
 	
-	@GetMapping
-	public List<Filmes> findAll(@RequestParam(required = false)String filmes, String diretor){
-		return filmesServices.findAll(filmes, diretor);
-	}
-	
-	 @GetMapping("/{id}")
+	@GetMapping("/{id}")
 	 public Filmes buscarPorId(@PathVariable("id") Integer id){
 	        return filmesServices.buscaPorId(id);
 	    }
@@ -62,7 +62,7 @@ public class FilmesController {
 	    }
 	  
 	  @DeleteMapping
-	  public ResponseEntity<Integer> delete(Integer id) {
+	  public ResponseEntity<Object> delete(Integer id) {
 		  filmesServices.remove(id);
 	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
